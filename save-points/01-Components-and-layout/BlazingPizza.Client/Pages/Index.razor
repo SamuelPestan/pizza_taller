@@ -1,5 +1,6 @@
 ﻿@page "/"
-@inject HttpClient HttpClient
+@inject HttpClient HttpClient /* Inyecta HttpClient para hacer solicitudes HTTP al servidor */
+
 
 <div class="main">
     <ul class="pizza-cards">
@@ -24,6 +25,7 @@
 
     protected override async Task OnInitializedAsync()
     {
+        // Solicita la lista de pizzas especiales al servidor usando HttpClient
         specials = await HttpClient.GetFromJsonAsync("specials", BlazingPizza.OrderContext.Default.ListPizzaSpecial);
     }
 }
