@@ -1,5 +1,13 @@
 ﻿@import url('font/quicksand.css');
 
+:root {
+    --dark-purple: #32213aff;
+    --space-cadet: #383b53ff;
+    --paynes-gray: #66717eff;
+    --pearl: #d4d6b9ff;
+    --sage: #d1caa1ff;
+}
+
 body, html {
     height: 100%;
 }
@@ -21,12 +29,12 @@ form {
 
 .top-bar {
     height: 5rem;
-    background-color: rgb(192,0,0);
-    background-image: linear-gradient(rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.25) 25%, rgba(0,0,0,0) 70%);
+    background-color: var(--dark-purple);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.25) 25%, rgba(0, 0, 0, 0) 70%);
     display: flex;
     align-items: stretch;
-    color: white;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+    color: var(--pearl);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
     padding: 0 3rem;
     position: fixed;
     top: 0;
@@ -62,13 +70,13 @@ form {
     margin: 0;
     padding: 0.3rem 1.8rem;
     display: inline-block;
-    background-color: rgba(0,0,0,0.1);
+    background-color: var(--space-cadet);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-size: 0.9rem;
-    color: white;
+    color: var(--pearl);
     position: relative;
     text-transform: uppercase;
     transition: 0.2s ease-out;
@@ -170,7 +178,7 @@ form {
     position: absolute;
     background: linear-gradient(rgba(0,0,0,0.7) 30%, rgba(0,0,0,0) 80%);
     padding: 1rem 1rem;
-    color: #fff2cc;
+    color: var(--pearl);
     cursor: pointer;
     text-shadow: 0 2px 2px rgba(0,0,0,0.5);
     line-height: 1.25rem;
