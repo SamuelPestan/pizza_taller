@@ -1,3 +1,50 @@
 ﻿@page "/"
 
-<h1>Blazing Pizzas</h1>
+<style>
+    /* Asegura que los elementos estén centrados y alineados verticalmente */
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        height: 100vh;
+        justify-content: center;
+        position: relative;
+    }
+
+    /* Estilo básico del botón */
+    button {
+        padding: 10px 20px;
+        font-size: 18px;
+        cursor: pointer;
+        transition: transform 0.3s ease; /* Animación para el movimiento */
+    }
+</style>
+
+<div class="container">
+    <h1>SP Blazing Pizzas</h1>
+
+    <h1>Bienvenido a PizzaShop</h1>
+
+    <p>Disfruta de nuestras pizzas artesanales con ingredientes frescos y de calidad.</p>
+
+    <p>Explora nuestro menú y personaliza tu pizza a tu gusto.</p>
+
+    <button @onclick="prankButton" style="@buttonStyle">¡Haz tu pedido ahora!</button>
+</div>
+
+@code {
+    private string buttonStyle = ""; // Estilo inicial vacío
+
+    void prankButton()
+    {
+        // Genera valores aleatorios para el desplazamiento
+        var randomX = new Random().Next(-100, 100); // Movimiento en X
+        var randomY = new Random().Next(-100, 100); // Movimiento en Y
+
+        // Aplica el desplazamiento directamente en el estilo del botón
+        buttonStyle = $"transform: translate({randomX}px, {randomY}px);";
+
+        StateHasChanged(); // Para que se actualice el estado del componente
+    }
+}
