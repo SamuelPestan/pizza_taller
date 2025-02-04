@@ -1,11 +1,11 @@
 ﻿@import url('font/quicksand.css');
 
 :root {
-    --dark-purple: #32213aff;
-    --space-cadet: #383b53ff;
-    --paynes-gray: #66717eff;
-    --pearl: #d4d6b9ff;
-    --sage: #d1caa1ff;
+    --dark-purple: 32213A;
+    --space-cadet: 383B53;
+    --paynes-gray: 66717E;
+    --pearl: D4D6B9;
+    --sage: D1CAA1;
 }
 
 body, html {
