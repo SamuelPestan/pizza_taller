@@ -7,6 +7,7 @@
         {
             @foreach (var special in specials)
             {
+                /* Clic en la tarjeta para mostrar el diálogo de configuración de la pizza */
                 <li @onclick="@(() => ShowConfigurePizzaDialog(special))" style="background-image: url('@special.ImageUrl')">
                     <div class="pizza-info">
                         <span class="title">@special.Name</span>
@@ -27,6 +28,7 @@
 
             @foreach (var configuredPizza in order.Pizzas)
             {
+                /* Componente para mostrar cada pizza configurada en el pedido */
                 <ConfiguredPizzaItem Pizza="configuredPizza" OnRemoved="@(() => RemoveConfiguredPizza(configuredPizza))" />
             }
         </div>
@@ -61,6 +63,7 @@
 
     protected override async Task OnInitializedAsync()
     {
+        /* Obtiene la lista de pizzas especiales desde el servidor */
         specials = await HttpClient.GetFromJsonAsync<List<PizzaSpecial>>("specials");
     }
 
@@ -87,6 +90,7 @@
     {
         if (configuringPizza is not null)
         {
+            /* Agrega la pizza configurada al pedido */
             order.Pizzas.Add(configuringPizza);
             configuringPizza = null;
         }
@@ -101,6 +105,7 @@
 
     async Task PlaceOrder()
     {
+        /* Envía el pedido al servidor */
         await HttpClient.PostAsJsonAsync("orders", order);
         order = new Order();
     }
