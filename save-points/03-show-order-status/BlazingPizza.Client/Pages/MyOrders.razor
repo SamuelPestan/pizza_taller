@@ -6,11 +6,12 @@
 <div class="main">
     @if (ordersWithStatus is null)
     {
+        /* Muestra un mensaje de carga mientras se obtienen los datos */
         <text>Loading...</text>
     }
     else if (!ordersWithStatus.Any())
     {
-        <h2>No orders placed</h2>
+        <h2>No orders placed</h2> /* Mensaje cuando no hay pedidos realizados */
         <a class="btn btn-success" href="">Order some pizza</a>
     }
     else
@@ -26,6 +27,7 @@
                         Total price:
                         <strong>£@item.Order.GetFormattedTotalPrice()</strong>
                     </div>
+                    <!-- Muestra la fecha, número de items y precio total del pedido -->
                     <div class="col">
                         Status: <strong>@item.StatusText</strong>
                     </div>
