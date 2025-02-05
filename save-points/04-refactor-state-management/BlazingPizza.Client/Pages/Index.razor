@@ -9,6 +9,7 @@
         {
             @foreach (var special in specials)
             {
+                /* Clic en la tarjeta para mostrar el diálogo de configuración de la pizza */
                 <li @onclick="@(() => OrderState.ShowConfigurePizzaDialog(special))" style="background-image: url('@special.ImageUrl')">
                     <div class="pizza-info">
                         <span class="title">@special.Name</span>
@@ -29,6 +30,7 @@
 
             @foreach (var configuredPizza in Order.Pizzas)
             {
+                /* Componente para mostrar cada pizza configurada en el pedido */
                 <ConfiguredPizzaItem Pizza="configuredPizza" OnRemoved="@(() => OrderState.RemoveConfiguredPizza(configuredPizza))" />
             }
         </div>
@@ -61,11 +63,13 @@
 
     protected override async Task OnInitializedAsync()
     {
+        /* Obtiene la lista de pizzas especiales desde el servidor */
         specials = await HttpClient.GetFromJsonAsync<List<PizzaSpecial>>("specials");
     }
 
     async Task PlaceOrder()
     {
+        /* Envía el pedido al servidor y navega a la página de seguimiento del pedido */
         var response = await HttpClient.PostAsJsonAsync("orders", OrderState.Order);
         var newOrderId = await response.Content.ReadFromJsonAsync<int>();
         OrderState.ResetOrder();
