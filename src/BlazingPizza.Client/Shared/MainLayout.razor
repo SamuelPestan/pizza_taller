@@ -20,7 +20,7 @@
 
     <NavLink @onclick="ToggleDarkMode" class="nav-tab">
         <img src="img/user.svg" />
-        <div>🌙</div>
+        <div>@(isDarkMode ? "Modo Claro" : "Modo Oscuro")</div> <!-- Cambio dinámico del texto -->
     </NavLink>
 
     <LoginDisplay />
