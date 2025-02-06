@@ -1,5 +1,13 @@
 ﻿@import url('font/quicksand.css');
-
+:root {
+    --dark-purple: #32213A;
+    --dark-blue: #383B53;
+    --blue-gray: #66717E;
+    --l-blue-gray: 828E9B;
+    --pearl: #D4D6B9;
+    --sage: #D1CAA1;
+    --intense-sage: #C4BC8E;
+}
 body, html {
     height: 100%;
 }
@@ -21,8 +29,8 @@ form {
 
 .top-bar {
     height: 5rem;
-    background-color: rgb(192,0,0);
-    background-image: linear-gradient(rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.25) 25%, rgba(0,0,0,0) 70%);
+    background-color: var(--dark-purple);
+    background-image: linear-gradient(rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.25) 30%, rgba(0,0,0,0) 70%);
     display: flex;
     align-items: stretch;
     color: white;
@@ -193,13 +201,13 @@ form {
         font-weight: 700;
         padding: 0rem 0.7rem;
         border-radius: 4px;
-        background-color: #08af08;
+        background-color: var(--blue-gray);
         color: white;
         line-height: 2rem;
     }
 
 .price::before {
-    content: '£';
+    content: '€';
     font-weight: 300;
     font-size: 1.2rem;
     margin-right: 0.2rem;
@@ -230,7 +238,7 @@ form {
     }
 
 .order-total {
-    background-color: rgb(191, 52, 52);
+    background-color: var(--dark-purple);
     height: 4rem;
     flex-shrink: 0;
     display: flex;
@@ -252,7 +260,7 @@ form {
     }
 
         .order-total .total-price::before {
-            content: '£';
+            content: '€';
             font-weight: 300;
             margin: 0 0.1rem 0 0.4rem;
         }
@@ -309,7 +317,7 @@ form {
 }
 
     .item-price::before {
-        content: '£';
+        content: '€';
         font-weight: 100;
         margin-right: 0.3rem;
     }
@@ -384,7 +392,7 @@ form {
 }
 
 .dialog-title {
-    background-color: #444;
+    background-color: var(--dark-blue);
     color: #fff2cc;
     padding: 1.3rem 2rem;
 }
@@ -442,7 +450,7 @@ form {
 
 .dialog .topping {
     display: inline-block;
-    background-color: #a04343;
+    background-color: var(--dark-blue);
     color: white;
     padding: 0.2rem 1rem;
     border-radius: 2rem;
@@ -456,7 +464,7 @@ form {
 }
 
 .dialog .topping-price::before {
-    content: '£';
+    content: '€';
 }
 
 .delete-topping {
@@ -468,7 +476,7 @@ form {
 }
 
 .delete-topping:hover {
-    color: yellow;
+    color: var(--pearl);
 }
 
 .form-message {
@@ -490,7 +498,7 @@ form {
 }
 
 .orders-list h5 {
-    color: #c03939;
+    color: var(--blue-gray);
     font-size: 1.3rem;
     font-weight: 300;
     margin: 0.2rem 0 0 0;
@@ -518,7 +526,7 @@ form {
 }
 
     .track-order-title h2 {
-        color: #c03939;
+        color: var(--blue-gray);
         font-size: 1.3rem;
         font-weight: 300;
         margin: 0rem;
@@ -588,7 +596,7 @@ input[type=range] {
         height: 20px;
         width: 20px;
         border-radius: 10px;
-        background: #d45352;
+        background: var(--sage);
         cursor: pointer;
         -webkit-appearance: none;
         margin-top: -7.1px;
@@ -614,7 +622,7 @@ input[type=range] {
         height: 20px;
         width: 20px;
         border-radius: 10px;
-        background: #d45352;
+        background: var(--dark-blue);
         cursor: pointer;
     }
 
@@ -757,3 +765,33 @@ input[type=range] {
         transform: translateX(500px);
     }
 }
+
+.btn-secondary {
+    background-color: var(--blue-gray);
+    border-color: var(--blue-gray);
+}
+
+.btn-success {
+    background-color: var(--dark-blue);
+    border-color: var(--dark-blue);
+}
+
+.btn-success:hover {
+    background-color: var(--dark-purple);
+    border-color: var(--dark-purple);
+}
+
+.btn-warning.disabled {
+    background-color: var(--pearl);
+    border-color: var(--pearl);
+}
+
+.btn-warning {
+    background-color: var(--sage);
+    border-color: var(--sage);
+}
+
+    .btn-warning:hover {
+        background-color: var(--intense-sage);
+        border-color: var(--intense-sage);
+    }
