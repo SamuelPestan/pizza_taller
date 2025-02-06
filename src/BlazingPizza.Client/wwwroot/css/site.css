@@ -59,20 +59,16 @@ form {
     background-color: white;
 }
 
+body.dark-mode .content {
+    background-color: #1e1e1e;
+}
+
 .main {
     flex-grow: 1;
     overflow-y: auto;
     background: linear-gradient(rgba(0,0,0,0) 40%, rgba(0,0,0,0.4) 80%);
     padding: 1.5rem !important;
 }
-
-    .main.dark-mode {
-        flex-grow: 1;
-        overflow-y: auto;
-        background-color: #121212;
-        background: linear-gradient(rgba(0,0,0,0) 40%, rgba(0,0,0,0.4) 80%);
-        padding: 1.5rem !important;
-    }
 
 .nav-tab {
     margin: 0;
@@ -414,6 +410,10 @@ form {
         line-height: 1.3rem;
     }
 
+body.dark-mode .dialog-title {
+    background-color: var(--blue-gray);
+}
+
 .dialog-body {
     flex-grow: 1;
     padding: 0.5rem 3rem 1rem 0;
@@ -707,7 +707,7 @@ input[type=range] {
         display: block;
         width: 200px;
         height: 100%;
-        background-color: #dc105a;
+        background-color: var(--dark-purple);
         animation: progressbar-slide 1s infinite;
         animation-timing-function: ease-in-out;
     }
