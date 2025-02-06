@@ -66,6 +66,14 @@ form {
     padding: 1.5rem !important;
 }
 
+    .main.dark-mode {
+        flex-grow: 1;
+        overflow-y: auto;
+        background-color: #121212;
+        background: linear-gradient(rgba(0,0,0,0) 40%, rgba(0,0,0,0.4) 80%);
+        padding: 1.5rem !important;
+    }
+
 .nav-tab {
     margin: 0;
     padding: 0.3rem 1.8rem;
@@ -804,4 +812,31 @@ input[type=range] {
     .btn-warning:hover {
         background-color: var(--intense-sage);
         border-color: var(--intense-sage);
+    }
+
+.nav-pills .nav-link.active {
+    background-color: var(--sage);
+}
+
+.nav-pills .nav-link.active:hover {
+    background-color: var(--intense-sage);
+}
+
+.nav-item > a {
+    color: var(--blue-gray);
+}
+
+.btn-primary {
+    background-color: var(--dark-blue);
+    border-color: var(--dark-blue);
+}
+
+    .btn-primary:hover {
+        background-color: var(--blue-gray);
+        border-color: var(--blue-gray);
+    }
+
+    .btn-primary.active {
+        background-color: var(--blue-gray);
+        border-color: var(--blue-gray);
     }
