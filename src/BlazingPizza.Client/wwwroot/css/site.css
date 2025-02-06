@@ -49,7 +49,7 @@ form {
 
     .logo > img {
         margin-right: 3rem;
-        width: 9rem;
+        transform: scale(3);
     }
 
 .content {
@@ -776,10 +776,20 @@ input[type=range] {
     border-color: var(--dark-blue);
 }
 
-.btn-success:hover {
-    background-color: var(--dark-purple);
-    border-color: var(--dark-purple);
-}
+    .btn-success:hover {
+        background-color: var(--dark-purple);
+        border-color: var(--dark-purple);
+    }
+
+    .btn-success:active {
+        background-color: var(--dark-blue);
+        border-color: var(--dark-blue);
+    }
+
+    .btn-success:focus {
+        background-color: var(--dark-blue);
+        border-color: var(--dark-blue);
+    }
 
 .btn-warning.disabled {
     background-color: var(--pearl);
