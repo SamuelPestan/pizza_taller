@@ -871,6 +871,7 @@ body.dark-mode .dialog-body {
 body.dark-mode .dialog-buttons {
     background-color: #808080;
 }
+
     body.dark-mode .dialog-buttons > span {
         color: white;
     }
