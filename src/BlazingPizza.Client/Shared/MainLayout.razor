@@ -19,7 +19,7 @@
     </AuthorizeView>
 
     <NavLink @onclick="ToggleDarkMode" class="nav-tab">
-        <img src="img/user.svg" />
+        <img src="@DarkModeIcon" class="img-nav-tab" />
         <div>@(isDarkMode ? "Modo Claro" : "Modo Oscuro")</div> <!-- Cambio dinámico del texto -->
     </NavLink>
 
@@ -32,6 +32,7 @@
 
 @code {
     private bool isDarkMode = false;
+    private string DarkModeIcon => isDarkMode ? "img/sun.svg" : "img/moon.svg"; // Cambia la imagen
 
     private async Task ToggleDarkMode()
     {

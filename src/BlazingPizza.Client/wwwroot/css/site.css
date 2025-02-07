@@ -70,6 +70,13 @@ body.dark-mode .content {
     padding: 1.5rem !important;
 }
 
+body.dark-mode .main {
+    flex-grow: 1;
+    overflow-y: auto;
+    background: linear-gradient(to bottom, #1e1e1e 30%, #3a3a3a 90%, #9C9C9C 100%);
+    padding: 1.5rem !important;
+}
+
 .nav-tab {
     margin: 0;
     padding: 0.3rem 1.8rem;
@@ -839,4 +846,31 @@ input[type=range] {
     .btn-primary.active {
         background-color: var(--blue-gray);
         border-color: var(--blue-gray);
+    }
+
+.img-nav-tab {
+    transform: scale(2);
+}
+
+    .img-nav-tab:hover {
+        cursor: pointer;
+    }
+
+body.dark-mode .dialog-body {
+    background-color: #505151;
+}
+
+    body.dark-mode .dialog-body > div {
+        color: white;
+    }
+
+    body.dark-mode .dialog-body input {
+        background-color: #505151 !important;
+    }
+
+body.dark-mode .dialog-buttons {
+    background-color: #808080;
+}
+    body.dark-mode .dialog-buttons > span {
+        color: white;
     }
