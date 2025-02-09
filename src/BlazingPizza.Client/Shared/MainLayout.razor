@@ -18,7 +18,7 @@
         </NavLink>
     </AuthorizeView>
 
-    <NavLink @onclick="ToggleDarkMode" class="nav-tab">
+    <NavLink @onclick="ToggleDarkMode" class="nav-tab theme-toggle">
         <img src="@DarkModeIcon" class="img-nav-tab" />
         <div>@(isDarkMode ? "Modo Claro" : "Modo Oscuro")</div> <!-- Cambio dinámico del texto -->
     </NavLink>
@@ -34,9 +34,27 @@
     private bool isDarkMode = false;
     private string DarkModeIcon => isDarkMode ? "img/sun.svg" : "img/moon.svg"; // Cambia la imagen
 
+    protected override async Task OnInitializedAsync()
+    {
+        // Obtiene el valor almacenado en localStorage sobre el estado del modo oscuro.
+        var storedMode = await JS.InvokeAsync<string>("localStorage.getItem", "darkMode");
+        isDarkMode = storedMode == "true"; // Convierte el valor en bool
+        ApplyDarkMode();
+    }
+
+    // Función que cambia entre modo claro y oscuro cuando el usuario hace clic en el botón.
     private async Task ToggleDarkMode()
     {
         isDarkMode = !isDarkMode;
+        // Guarda el nuevo estado en localStorage para que se recuerde entre sesiones.
+        await JS.InvokeVoidAsync("localStorage.setItem", "darkMode", isDarkMode.ToString().ToLower());
+        ApplyDarkMode();
+    }
+
+    // Función que aplica el modo oscuro en el cuerpo de la página.
+    private async void ApplyDarkMode()
+    {
+        // Agrega o quita la clase 'dark-mode' en el <body> según el estado actual.
         await JS.InvokeVoidAsync("document.body.classList.toggle", "dark-mode", isDarkMode);
     }
 }
