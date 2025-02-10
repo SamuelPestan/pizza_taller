@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let storedColorMode = localStorage.getItem("colorBlindMode") || "normal";
     window.applyColorBlindMode(storedColorMode);
 
-    // Seleccionar automáticamente la opción en el <select>
+    // Seleccionar automáticamente la opción en el select
     let select = document.getElementById("colorBlindMode");
     if (select) {
         select.value = storedColorMode;

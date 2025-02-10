@@ -14,12 +14,15 @@ builder.Services.AddDbContext<PizzaStoreContext>(options =>
         options.UseSqlite("Data Source=pizza.db")
             .UseModel(BlazingPizza.Server.Models.PizzaStoreContextModel.Instance));
 
+// **Configuración de la autenticación de identidad (ASP.NET Core Identity) **
 builder.Services.AddDefaultIdentity<PizzaStoreUser>(options => options.SignIn.RequireConfirmedAccount = true)
         .AddEntityFrameworkStores<PizzaStoreContext>();
 
+// **Configuración de IdentityServer (gestiona la autenticación y tokens)**
 builder.Services.AddIdentityServer()
         .AddApiAuthorization<PizzaStoreUser, PizzaStoreContext>();
 
+// **Configuración de autenticación JWT para API**
 builder.Services.AddAuthentication()
         .AddIdentityServerJwt();
 
