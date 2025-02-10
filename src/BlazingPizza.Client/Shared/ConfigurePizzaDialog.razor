@@ -7,10 +7,10 @@
         </div>
         <form class="dialog-body">
             <div>
-                <label>Size:</label>
+                <label>Tamaño:</label>
                 <input type="range" min="@Pizza.MinimumSize" max="@Pizza.MaximumSize" step="1" @bind="Pizza.Size" @bind:event="oninput" />
                 <span class="size-label">
-                    @(Pizza.Size)" (€@(Pizza.GetFormattedTotalPrice()))
+                    @(Pizza.Size)" (@(Pizza.GetFormattedTotalPrice())€)
                 </span>
             </div>
             <div>
@@ -18,12 +18,12 @@
                 @if (toppings is null)
                 {
                     <select class="custom-select" disabled>
-                        <option>(loading...)</option>
+                        <option>(cargando...)</option>
                     </select>
                 }
                 else if (Pizza.Toppings.Count >= 6)
                 {
-                    <div>(maximum reached)</div>
+                    <div>(máximo alcanzado)</div>
                 }
                 else
                 {
@@ -31,7 +31,7 @@
                         <option value="-1" disabled selected>(select)</option>
                         @for (var i = 0; i < toppings.Count; i++)
                         {
-                            <option value="@i">@toppings[i].Name - (€@(toppings[i].GetFormattedPrice()))</option>
+                            <option value="@i">@toppings[i].Name - (@(toppings[i].GetFormattedPrice())€)</option>
                         }
                     </select>
                 }
@@ -55,9 +55,9 @@
         <div class="dialog-buttons">
             <button class="btn btn-secondary mr-auto" @onclick="OnCancel">Cancel</button>
             <span class="mr-center">
-                Price: <span class="price">@(Pizza.GetFormattedTotalPrice())</span>
+                Precio: <span class="price">@(Pizza.GetFormattedTotalPrice())</span>
             </span>
-            <button class="btn btn-success ml-auto" @onclick="OnConfirm">Order ></button>
+            <button class="btn btn-success ml-auto" @onclick="OnConfirm">Ordenar ></button>
         </div>
 
 

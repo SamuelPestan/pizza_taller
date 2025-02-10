@@ -2,13 +2,13 @@
 @attribute [Authorize]
 @inject OrdersClient OrdersClient
 
-<PageTitle>Blazing Pizza - My Orders</PageTitle>
+<PageTitle>Carlos Rihujur - Mis Ordenes</PageTitle>
 
 <div class="main">
     <TemplatedList Loader="@LoadOrders" ListGroupClass="orders-list">
-        <Loading>Loading...</Loading>
+        <Loading>Cargando...</Loading>
         <Empty>
-            <h2>No orders placed</h2>
+            <h2>No hay ordenes</h2>
             <a class="btn btn-success" href="">Order some pizza</a>
         </Empty>
         <Item Context="item">
@@ -16,11 +16,11 @@
                 <h5>@item.Order.CreatedTime.ToLongDateString()</h5>
                 Items:
                 <strong>@item.Order.Pizzas.Count()</strong>;
-                Total price:
-                <strong>€@item.Order.GetFormattedTotalPrice()</strong>
+                Precio Total:
+                <strong>@item.Order.GetFormattedTotalPrice()€</strong>
             </div>
             <div class="col">
-                Status: <strong>@item.StatusText</strong>
+                Estado: <strong>@item.StatusText</strong>
             </div>
             <div class="col flex-grow-0">
                 <a href="myorders/@item.Order.OrderId" class="btn btn-success">
