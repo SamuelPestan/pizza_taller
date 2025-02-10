@@ -888,3 +888,15 @@ body.dark-mode .dialog-buttons {
         line-height: 1.2;
         color: var(--sage);
     }
+
+.protanopia {
+    filter: sepia(100%) saturate(100%) hue-rotate(-50deg);
+}
+
+.deuteranopia {
+    filter: sepia(100%) saturate(100%) hue-rotate(-20deg);
+}
+
+.tritanopia {
+    filter: sepia(100%) saturate(100%) hue-rotate(80deg);
+}

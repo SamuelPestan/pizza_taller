@@ -23,6 +23,16 @@
         <div>@(isDarkMode ? "Modo Claro" : "Modo Oscuro")</div> <!-- Cambio dinámico del texto -->
     </NavLink>
 
+    <div class="nav-tab">
+        <label for="colorBlindMode">Daltonismo:</label>
+        <select id="colorBlindMode" @onchange="ChangeColorBlindMode">
+            <option value="normal">Normal</option>
+            <option value="protanopia">Protanopia</option>
+            <option value="deuteranopia">Deuteranopia</option>
+            <option value="tritanopia">Tritanopia</option>
+        </select>
+    </div>
+
     <LoginDisplay />
 </div>
 
@@ -57,4 +67,19 @@
         // Agrega o quita la clase 'dark-mode' en el <body> según el estado actual.
         await JS.InvokeVoidAsync("document.body.classList.toggle", "dark-mode", isDarkMode);
     }
+
+    private async Task ChangeColorBlindMode(ChangeEventArgs e)
+    {
+        string mode = e.Value.ToString();
+        await JS.InvokeVoidAsync("applyColorBlindMode", mode);
+    }
 }
+
+<script>
+    function applyColorBlindMode(mode) {
+        document.body.classList.remove("protanopia", "deuteranopia", "tritanopia");
+        if (mode !== "normal") {
+            document.body.classList.add(mode);
+        }
+    }
+</script>
