@@ -901,11 +901,11 @@ body.dark-mode .dialog-buttons {
     filter: sepia(100%) saturate(100%) hue-rotate(80deg);
 }
 
-/* Estilos generales del select */
+
 #colorBlindMode {
     appearance: none; /* Oculta el estilo por defecto */
     background: none; /* Quita el fondo */
-    border: 1px solid #d4d6b9; /* Borde con el color de tu paleta */
+    border: 1px solid #d4d6b9;
     color: #d4d6b9; /* Color del texto */
     font-size: 16px;
     padding: 8px 12px;
@@ -914,7 +914,6 @@ body.dark-mode .dialog-buttons {
     outline: none; /* Elimina el contorno azul en algunos navegadores */
 }
 
-    /* Cambia el color del texto y el borde al pasar el cursor */
     #colorBlindMode:hover {
         border-color: #d1caa1;
         color: #d1caa1;
