@@ -50,6 +50,13 @@
         var storedMode = await JS.InvokeAsync<string>("localStorage.getItem", "darkMode");
         isDarkMode = storedMode == "true"; // Convierte el valor en bool
         ApplyDarkMode();
+
+        // Obtener modo de daltonismo desde localStorage
+        var storedColorMode = await JS.InvokeAsync<string>("localStorage.getItem", "colorBlindMode");
+        if (!string.IsNullOrEmpty(storedColorMode))
+        {
+            await JS.InvokeVoidAsync("applyColorBlindMode", storedColorMode);
+        }
     }
 
     // Función que cambia entre modo claro y oscuro cuando el usuario hace clic en el botón.
@@ -70,16 +77,8 @@
 
     private async Task ChangeColorBlindMode(ChangeEventArgs e)
     {
-        string mode = e.Value.ToString();
+        string mode = e.Value?.ToString() ?? "normal";
+        await JS.InvokeVoidAsync("localStorage.setItem", "colorBlindMode", mode); // Guardar en localStorage
         await JS.InvokeVoidAsync("applyColorBlindMode", mode);
     }
 }
-
-<script>
-    function applyColorBlindMode(mode) {
-        document.body.classList.remove("protanopia", "deuteranopia", "tritanopia");
-        if (mode !== "normal") {
-            document.body.classList.add(mode);
-        }
-    }
-</script>
