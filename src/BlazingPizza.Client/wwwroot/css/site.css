@@ -900,3 +900,34 @@ body.dark-mode .dialog-buttons {
 .tritanopia {
     filter: sepia(100%) saturate(100%) hue-rotate(80deg);
 }
+
+/* Estilos generales del select */
+#colorBlindMode {
+    appearance: none; /* Oculta el estilo por defecto */
+    background: none; /* Quita el fondo */
+    border: 1px solid #d4d6b9; /* Borde con el color de tu paleta */
+    color: #d4d6b9; /* Color del texto */
+    font-size: 16px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none; /* Elimina el contorno azul en algunos navegadores */
+}
+
+    /* Cambia el color del texto y el borde al pasar el cursor */
+    #colorBlindMode:hover {
+        border-color: #d1caa1;
+        color: #d1caa1;
+    }
+
+    /* Estilo cuando se selecciona */
+    #colorBlindMode:focus {
+        border-color: #66717e;
+        color: #66717e;
+    }
+
+    /* Opciones del select */
+    #colorBlindMode option {
+        background-color: #383b53; /* Color de fondo de las opciones */
+        color: #d4d6b9; /* Color del texto */
+    }

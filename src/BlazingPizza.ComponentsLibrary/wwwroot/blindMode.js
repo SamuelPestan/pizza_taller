@@ -3,6 +3,8 @@ window.applyColorBlindMode = function (mode) {
     if (mode !== "normal") {
         document.body.classList.add(mode);
     }
+    // Guardar la selección en localStorage
+    localStorage.setItem("colorBlindMode", mode);
 };
 
 // Aplicar modo de daltonismo guardado al cargar la página

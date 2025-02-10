@@ -23,8 +23,7 @@
         <div>@(isDarkMode ? "Modo Claro" : "Modo Oscuro")</div> <!-- Cambio dinámico del texto -->
     </NavLink>
 
-    <div class="nav-tab">
-        <label for="colorBlindMode">Daltonismo:</label>
+    <div class="nav-tab">   
         <select id="colorBlindMode" @onchange="ChangeColorBlindMode">
             <option value="normal">Normal</option>
             <option value="protanopia">Protanopia</option>
