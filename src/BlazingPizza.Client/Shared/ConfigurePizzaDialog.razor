@@ -51,6 +51,7 @@
         }
         @if (Pizza.Toppings.Count > 0)
         {
+            /* Se mostrará el botón unicamente si hay al menos un topping*/
             <button type="button" class="btn btn-danger" @onclick="RemoveAllToppings">X</button>
         }
     </div>
