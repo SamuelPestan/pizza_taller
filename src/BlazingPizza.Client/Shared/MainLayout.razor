@@ -8,13 +8,13 @@
 
     <NavLink href="" class="nav-tab" Match="NavLinkMatch.All">
         <img src="img/pizza-slice.svg" />
-        <div>Pizza</div>
+        <div>Menú</div>
     </NavLink>
 
     <AuthorizeView>
         <NavLink href="myorders" class="nav-tab">
             <img src="img/bike.svg" />
-            <div>My Orders</div>
+            <div>Mis pedidos</div>
         </NavLink>
     </AuthorizeView>
 
@@ -70,7 +70,7 @@
     // Función que aplica el modo oscuro en el cuerpo de la página.
     private async void ApplyDarkMode()
     {
-        // Agrega o quita la clase 'dark-mode' en el body según el estado actual.
+        // Agrega o quita la clase dark-mode en el body según el estado actual.
         await JS.InvokeVoidAsync("document.body.classList.toggle", "dark-mode", isDarkMode);
     }
 
